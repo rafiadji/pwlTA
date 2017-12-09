@@ -16,6 +16,16 @@
 					<i class="fa fa-dashboard"></i> <span>Dashboard</span>
 				</a>
 			</li>
+			<li class="">
+				<a href="<?php echo site_url("dosen")?>">
+					<i class="fa fa-user"></i> <span>Dosen</span>
+				</a>
+			</li>
+			<li class="">
+				<a href="#">
+					<i class="fa fa-child"></i> <span>Ruang</span>
+				</a>
+			</li>
 		</ul>
 	</section>
 </aside>

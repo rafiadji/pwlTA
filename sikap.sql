@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2017-11-18 13:49:54
+Date: 2017-12-04 18:09:01
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -23,7 +23,8 @@ CREATE TABLE `sk_det_jadwal` (
   `kd_jadwal` int(11) DEFAULT NULL,
   `hari` varchar(10) DEFAULT NULL,
   `tgl` date DEFAULT NULL,
-  `jam` time DEFAULT NULL,
+  `jam_mulai` time DEFAULT NULL,
+  `jam_selesai` time DEFAULT NULL,
   `kd_ruang` varchar(10) DEFAULT NULL,
   `catatan` text,
   `sts_jadwal` int(11) DEFAULT NULL
@@ -31,6 +32,20 @@ CREATE TABLE `sk_det_jadwal` (
 
 -- ----------------------------
 -- Records of sk_det_jadwal
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for sk_det_matkul
+-- ----------------------------
+DROP TABLE IF EXISTS `sk_det_matkul`;
+CREATE TABLE `sk_det_matkul` (
+  `nrp` varchar(10) DEFAULT NULL,
+  `kd_matkul` varchar(10) DEFAULT NULL,
+  `semester` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of sk_det_matkul
 -- ----------------------------
 
 -- ----------------------------
@@ -48,6 +63,8 @@ CREATE TABLE `sk_dosen` (
 -- ----------------------------
 -- Records of sk_dosen
 -- ----------------------------
+INSERT INTO `sk_dosen` VALUES ('09284765', 'Sugeng Widodo', 'Malang', '08934756281');
+INSERT INTO `sk_dosen` VALUES ('615528364', 'Rachmat Maulidi', 'Malang', '9873654782');
 
 -- ----------------------------
 -- Table structure for sk_jadwal
@@ -64,6 +81,50 @@ CREATE TABLE `sk_jadwal` (
 
 -- ----------------------------
 -- Records of sk_jadwal
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for sk_login
+-- ----------------------------
+DROP TABLE IF EXISTS `sk_login`;
+CREATE TABLE `sk_login` (
+  `id_login` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) DEFAULT NULL,
+  `password` varchar(50) DEFAULT NULL,
+  `level` int(11) DEFAULT NULL,
+  `login_token` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id_login`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of sk_login
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for sk_login_android
+-- ----------------------------
+DROP TABLE IF EXISTS `sk_login_android`;
+CREATE TABLE `sk_login_android` (
+  `id_login` int(11) DEFAULT NULL,
+  `login_token` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of sk_login_android
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for sk_mahasiswa
+-- ----------------------------
+DROP TABLE IF EXISTS `sk_mahasiswa`;
+CREATE TABLE `sk_mahasiswa` (
+  `nrp` varchar(10) NOT NULL,
+  `nama` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`nrp`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of sk_mahasiswa
 -- ----------------------------
 
 -- ----------------------------

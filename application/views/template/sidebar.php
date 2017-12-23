@@ -22,10 +22,21 @@
 				</a>
 			</li>
 			<li class="">
-				<a href="#">
-					<i class="fa fa-child"></i> <span>Ruang</span>
+				<a href="<?php echo site_url("matkul")?>">
+					<i class="fa fa-file-text"></i> <span>Matakuliah</span>
 				</a>
 			</li>
+			<li class="">
+				<a href="<?php echo site_url("ruang")?>">
+					<i class="fa fa-bank"></i> <span>Ruang</span>
+				</a>
+			</li>
+			<li class="">
+				<a href="<?php echo site_url("mahasiswa")?>">
+					<i class="fa fa-graduation-cap"></i> <span>Mahasiswa</span>
+				</a>
+			</li>
+			
 		</ul>
 	</section>
 </aside>

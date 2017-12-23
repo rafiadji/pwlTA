@@ -11,17 +11,16 @@
 			<tr>
 				<th>Kode Ruang</th>
 				<th>Ruang</th>
-				<th>Opsi</th>
 			</tr>
 			</thead>
 			<tbody class="isiTabel">
 				<?php foreach ($dataTable as $row) :?>
 					<tr>
-						<td><?php echo $row->kd_ruang?></td>
+						<td><?php echo $row->kode_ruang?></td>
 						<td><?php echo $row->ruang?></td>
 						<td>
-							<a class="btn btn-primary btn-sm ubah" onclick="ubah('<?php echo trim($row->kd_ruang)?>')"><i class="fa fa-pencil"></i> Ubah</a>
-							<a href="<?php echo site_url('ruang/ruang/hapusData/'.$row->kd_ruang)?>" class="btn btn-danger btn-sm hapus" onclick="return confirm('Apakah anda ingin data Mahasiswa <?php echo trim($row->ruang)?>')"><i class="fa fa-trash"></i> Hapus</a>
+							<a class="btn btn-primary btn-sm ubah" onclick="ubah('<?php echo trim($row->kode_ruang)?>')"><i class="fa fa-pencil"></i> Ubah</a>
+							<a href="<?php echo site_url('ruang/ruang/hapusData/'.$row->kode_ruang)?>" class="btn btn-danger btn-sm hapus" onclick="return confirm('Apakah anda ingin data Mahasiswa <?php echo trim($row->ruang)?>')"><i class="fa fa-trash"></i> Hapus</a>
 						</td>
 					</tr>
 				<?php endforeach;?>

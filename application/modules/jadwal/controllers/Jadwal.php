@@ -1,21 +1,24 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Ruang extends CI_Controller {
+class Jadwal extends CI_Controller {
 
 	var $template = "dashboard";
 	
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('MRuang','rng');
+		$this->load->model('MJadwal','jdw');
 	}
 
 	public function index()
 	{
-		$data["dataTable"] = $this->rng->dapatData();
-		$data["title"] = "Ruang";
-		$data["page"] = "ruang/ruang";
+		$data["dataTable"] = $this->jdw->dapatData();
+		$data["dataMatkul"] = $this->jdw->dapatDataPilih("sk_matkul");
+		$data["dataDosen"] = $this->jdw->dapatDataPilih("sk_dosen");
+		$data["dataRuang"] = $this->jdw->dapatDataPilih("sk_ruang");
+		$data["title"] = "Jadwal";
+		$data["page"] = "jadwal/jadwal";
 		$this->load->view($this->template, $data);
 	}
 	

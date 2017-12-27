@@ -8,6 +8,8 @@
 		<link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
 		<link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/Ionicons/css/ionicons.min.css">
+		<link rel="stylesheet" href="<?php echo base_url()?>assets/plugins/timepicker/bootstrap-timepicker.min.css">
+		<link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/select2/dist/css/select2.min.css">
 		<link rel="stylesheet" href="<?php echo base_url()?>assets/dist/css/AdminLTE.min.css">
 		<link rel="stylesheet" href="<?php echo base_url()?>assets/dist/css/skins/_all-skins.min.css">
 		<link rel="stylesheet" href="<?php echo base_url()?>assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
@@ -27,6 +29,10 @@
 		<!-- DataTables -->
 		<script src="<?php echo base_url()?>assets/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 		<script src="<?php echo base_url()?>assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+		<!-- Select2 -->
+		<script src="<?php echo base_url()?>assets/bower_components/select2/dist/js/select2.full.min.js"></script>
+		<!-- bootstrap time picker -->
+		<script src="<?php echo base_url()?>assets/plugins/timepicker/bootstrap-timepicker.min.js"></script>
 		<!-- SlimScroll -->
 		<script src="<?php echo base_url()?>assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 		<!-- FastClick -->
@@ -37,6 +43,8 @@
 		<script src="<?php echo base_url()?>assets/dist/js/demo.js"></script>
 		<script>
 			$(document).ready(function () {
+				$('.timepicker').timepicker()
+				$('.select2').select2()
 				$('.sidebar-menu').tree()
 				$('.dataTable').DataTable({
 					'ordering':false,

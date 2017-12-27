@@ -1,9 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class MRuang extends CI_Model {
+class MJadwal extends CI_Model {
 
-	var $table = "sk_ruang";
+	var $table = "sk_jadwal";
+	var $detailtable = "sk_det_jadwal";
+	var $viewtable = "v_jadwal";
 
 	public function dapatData($where = array(), $result = TRUE)
 	{
@@ -12,7 +14,27 @@ class MRuang extends CI_Model {
 				$this->db->where($key,$value);
 			}
 		}
-		$res = $this->db->get($this->table);
+		$this->db->where("sts_jadwal","0");
+		$res = $this->db->get($this->viewtable);
+		if($result){
+			return $res->result();
+		}
+		elseif($result == FALSE){
+			return $res->row();
+		}
+		else{
+			return $res->result();
+		}
+	}
+	
+	public function dapatDataPilih($table, $where = array(), $result = TRUE)
+	{
+		if(count($where) > 0){
+			foreach ($where as $key => $value) {
+				$this->db->where($key,$value);
+			}
+		}
+		$res = $this->db->get($table);
 		if($result){
 			return $res->result();
 		}
@@ -27,6 +49,11 @@ class MRuang extends CI_Model {
 	public function tambahData($data)
 	{
 		return $this->db->insert($this->table, $data);
+	}
+	
+	public function tambahDataDetail($data)
+	{
+		return $this->db->insert($this->detailtable, $data);
 	}
 	
 	public function ubahData($data, $id)
